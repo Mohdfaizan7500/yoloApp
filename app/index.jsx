@@ -93,7 +93,7 @@ const index = () => {
                                 </View>
                             }
                         </Pressable>
-                        <Text style={[styles.UnfreeText, { color: Active ? Color.colorWhite : Color.colorFirebrick }]}>{Active ? `freez` : `unfreez`}</Text>
+                        <Text style={[styles.UnfreeText, { color: Active ? Color.colorWhite : Color.colorFirebrick }]}>{Active ? `freeze` : `unfreeze`}</Text>
                     </View>
                 </View>
             </View>
