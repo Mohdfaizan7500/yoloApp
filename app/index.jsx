@@ -34,51 +34,35 @@ const index = () => {
                     </Pressable>
                 </ScrollView>
             </View>
-            <View style={{ flex: 1, marginHorizontal: 15 }}>
+            <View style={{ flex: 1, marginHorizontal: s(15) }}>
                 <Text style={styles.yourDigitalDebit}>your digital debit card</Text>
-                <View style={{ flexDirection: "row", gap: 20, marginTop: 15, }}>
+                <View style={{ flexDirection: "row", gap: s(20), marginTop: s(15), }}>
                     {
                         Active ?
                             <ImageBackground
                                 source={require('../assets/images/CardDetails.png')}
-                                style={{
-                                    width: 200,
-                                    height: 300,
-                                    backgroundColor: "#000"
-                                }}
+                                style={styles.ImageStyle}
                                 resizeMode='stretch'
                             >
                                 <Text style={styles.ExpirtLabel}>expiry</Text>
                                 <Text
                                     style={styles.ExpirtDate}
                                 >{Expiry}</Text>
-                                <Text style={[styles.NumberStyle, { top: 75 }]}>{faker.number.int({ min: 1111, max: 9999 })}</Text>
-                                <Text style={[styles.NumberStyle, { top: 102 }]}>{faker.number.int({ min: 1111, max: 9999 })}</Text>
-                                <Text style={[styles.NumberStyle, { top: 129 }]}>{faker.number.int({ min: 1111, max: 9999 })}</Text>
-                                <Text style={[styles.NumberStyle, { top: 156 }]}>{faker.number.int({ min: 1111, max: 9999 })}</Text>
+                                <Text style={[styles.NumberStyle, { top: vs(69) }]}>{faker.number.int({ min: 1111, max: 9999 })}</Text>
+                                <Text style={[styles.NumberStyle, { top: vs(92) }]}>{faker.number.int({ min: 1111, max: 9999 })}</Text>
+                                <Text style={[styles.NumberStyle, { top: vs(116) }]}>{faker.number.int({ min: 1111, max: 9999 })}</Text>
+                                <Text style={[styles.NumberStyle, { top: vs(139 )}]}>{faker.number.int({ min: 1111, max: 9999 })}</Text>
                             </ImageBackground>
-
-
-
                             :
                             <Image
                                 source={require('../assets/images/Design_Layer.png')}
-                                style={{
-                                    width: 200,
-                                    height: 300,
-                                }}
+                                style={styles.ImageStyle}
                                 resizeMode='stretch'
                             />
-
-
-
-
-
-
                     }
 
 
-                    <View style={{ height: 300, width: 90, justifyContent: "center", alignItems: "center", paddingHorizontal: 10, gap: 10, }}>
+                    <View style={styles.ToggleButton}>
                         <Pressable onPress={() => { setActive(!Active), fetchData() }}>
                             {Active ?
                                 <View style={{ justifyContent: "center", alignItems: "center" }}>
@@ -101,29 +85,29 @@ const index = () => {
             <View style={styles.BottomContainer}>
                 <View style={styles.BottomItem}>
                     <View style={styles.IconContainerBlack}>
-                        <Ellipse12 height={45} width={45} style={styles.IconPosition} />
+                        <Ellipse12 height={s(45)} width={s(45)} style={styles.IconPosition} />
                         <HomeIcon style={styles.IconPosition} />
                     </View>
                     <Text style={[styles.BottomText, { opacity: 0.3 }]}>home</Text>
                 </View>
                 <View style={styles.BottomItem}>
                     <View style={styles.IconContainerPink}>
-                        <Ellipse13 height={70} width={70} style={styles.IconPosition} />
-                        <Rectangle30 height={25} width={25} style={styles.IconPosition} />
-                        <QrCode height={27} width={27} style={styles.IconPosition} />
+                        <Ellipse13 height={s(70)} width={s(70)} style={styles.IconPosition} />
+                        <Rectangle30 height={s(25)} width={s(25)} style={styles.IconPosition} />
+                        <QrCode height={s(27)} width={s(27)} style={styles.IconPosition} />
                     </View>
                     <Text style={styles.BottomText}>Yolo Pay</Text>
                 </View>
                 <View style={styles.BottomItem}>
                     <View style={styles.IconContainerGray}>
-                        <Ellipse14 height={45} width={45} style={styles.IconPosition} />
+                        <Ellipse14 height={s(45)} width={s(45)} style={styles.IconPosition} />
                         <Frame142 style={styles.IconPosition} />
                     </View>
                     <Text style={[styles.BottomText, { opacity: 0.3 }]}>gini</Text>
                 </View>
             </View>
             <Rectangle28 style={styles.Rectangle28} />
-            <Rectangle29 style={styles.rectangleIcon} width={400} />
+            <Rectangle29 style={styles.rectangleIcon} width={s(400)} />
         </SafeAreaView>
     )
 }
@@ -292,6 +276,20 @@ const styles = StyleSheet.create({
         fontFamily: FontFamily.poppinsRegular,
         color: '#fff',
         position: "absolute"
+    },
+    ImageStyle: {
+        width: s(180),
+        height: vs(270),
+        backgroundColor: "#000"
+    },
+    ToggleButton: {
+        height: vs(300),
+        width: s(90),
+        justifyContent: "center",
+        alignItems: "center",
+        paddingHorizontal: s(10),
+        gap: s(10),
+
     }
 
 });
