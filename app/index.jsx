@@ -78,7 +78,7 @@ const index = () => {
                     }
 
 
-                    <View style={{ height: 300, width: 80, justifyContent: "center", alignItems: "center", paddingHorizontal: 10, gap: 10, }}>
+                    <View style={{ height: 300, width: 90,backgroundColor:"yellow", justifyContent: "center", alignItems: "center", paddingHorizontal: 10, gap: 10, }}>
                         <Pressable onPress={() => { setActive(!Active), fetchData() }}>
                             {Active ?
                                 <View style={{ justifyContent: "center", alignItems: "center" }}>
